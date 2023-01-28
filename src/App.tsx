@@ -1,11 +1,16 @@
 import { HappyBirthday } from '../components/HappyBirthday'
+import { ParallaxImages } from '../components/ParallaxImages'
+import { Box } from '@mui/material'
+import { NotGood } from '../components/NotGood'
 import React from 'react'
 
 function App() {
     return (
-        <div className="App">
+        <Box className="App" sx={{ overflow: 'hidden' }}>
             <HappyBirthday />
-        </div>
+            <ParallaxImages />
+            <NotGood />
+        </Box>
     )
 }
 

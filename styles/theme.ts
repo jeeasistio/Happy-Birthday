@@ -5,5 +5,8 @@ export const theme = createTheme({
         allVariants: {
             fontFamily: 'Playfair Display, Lato, serif',
         },
+        h6: {
+            fontFamily: 'Lato, serif',
+        },
     },
 })
