@@ -12,8 +12,8 @@ export const NotGood = () => {
                 alignItems: 'center',
             }}
         >
-            <Typography align="center" variant="h6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            <Typography align="center" variant="h1">
+                I&apos;m not good with words so I&apos;ll just throw photos here.
             </Typography>
         </Box>
     )

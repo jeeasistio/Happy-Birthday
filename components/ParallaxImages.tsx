@@ -1,5 +1,6 @@
-import { Box, Stack } from '@mui/material'
 import React from 'react'
+import { Box, Stack } from '@mui/material'
+import { ParallaxCtn } from './ParallaxCtn'
 
 const images = [
     {
@@ -43,13 +44,15 @@ const images = [
 export const ParallaxImages = () => {
     return (
         <Box sx={{ height: '500px', backgroundColor: '#EBED9D', display: 'flex', alignItems: 'center' }}>
-            <Stack direction="row">
-                {images.map((image) => (
-                    <Box key={image.id}>
-                        <img src={image.src} width={image.width} height={image.width} />
-                    </Box>
-                ))}
-            </Stack>
+            <ParallaxCtn baseVelocity={-5}>
+                <Stack direction="row">
+                    {images.map((image) => (
+                        <Box key={image.id}>
+                            <img src={image.src} width={image.width} height={image.width} />
+                        </Box>
+                    ))}
+                </Stack>
+            </ParallaxCtn>
         </Box>
     )
 }
