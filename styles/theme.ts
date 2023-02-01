@@ -1,12 +1,11 @@
-import { createTheme } from '@mui/material'
+import { createTheme, responsiveFontSizes } from '@mui/material'
 
-export const theme = createTheme({
+export let theme = createTheme({
     typography: {
         allVariants: {
             fontFamily: 'Playfair Display, Lato, serif',
         },
-        h6: {
-            fontFamily: 'Lato, serif',
-        },
     },
 })
+
+theme = responsiveFontSizes(theme)

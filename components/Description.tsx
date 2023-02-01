@@ -21,8 +21,7 @@ export const Description = () => {
                             >
                                 {row.words.map((word, index) => (
                                     <Typography
-                                        variant="h1"
-                                        fontSize={'16rem'}
+                                        sx={{ fontSize: { xs: '8rem', sm: '12rem' } }}
                                         key={index}
                                         fontWeight="bold"
                                         fontFamily={rowIndex % 2 === 0 ? 'Lato' : 'Playfair Display'}

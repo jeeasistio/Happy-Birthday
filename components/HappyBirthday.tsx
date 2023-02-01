@@ -1,6 +1,7 @@
-import { Box, Typography } from '@mui/material'
-import { motion } from 'framer-motion'
 import React from 'react'
+import { Box } from '@mui/material'
+import { motion } from 'framer-motion'
+import TextCtn from './TextCtn'
 
 export const HappyBirthday = () => {
     return (
@@ -78,12 +79,25 @@ export const HappyBirthday = () => {
                     }}
                 />
             </Box>
-            <Typography
-                sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}
-                variant="h1"
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: { xs: 'column', md: 'row' },
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: 4,
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                }}
             >
-                Happy Birthday
-            </Typography>
+                {'Happy Birthday Viki'.split(' ').map((char, index) => (
+                    <Box key={index} component={motion.div} transition={{ delay: index }}>
+                        <TextCtn delay={0.2 * index}>{char}</TextCtn>
+                    </Box>
+                ))}
+            </Box>
         </Box>
     )
 }
