@@ -20,8 +20,8 @@ export const ParallaxCtn = ({ children, baseVelocity = 100 }: ParallaxProps) => 
     const { scrollY } = useScroll()
     const scrollVelocity = useVelocity(scrollY)
     const smoothVelocity = useSpring(scrollVelocity, {
-        damping: 50,
-        stiffness: 400,
+        damping: 30,
+        stiffness: 120,
     })
     const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
         clamp: false,
@@ -65,7 +65,7 @@ export const ParallaxCtn = ({ children, baseVelocity = 100 }: ParallaxProps) => 
             {Array(8)
                 .fill(0)
                 .map((_, index) => (
-                    <span key={index}>{children} </span>
+                    <span key={index}>{children}</span>
                 ))}
         </motion.div>
     )

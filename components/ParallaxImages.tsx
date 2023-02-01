@@ -44,7 +44,7 @@ const images = [
 export const ParallaxImages = () => {
     return (
         <Box sx={{ height: '500px', backgroundColor: '#EBED9D', display: 'flex', alignItems: 'center' }}>
-            <ParallaxCtn baseVelocity={-5}>
+            <ParallaxCtn baseVelocity={-2}>
                 <Stack direction="row">
                     {images.map((image) => (
                         <Box key={image.id}>
