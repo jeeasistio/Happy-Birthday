@@ -1,8 +1,16 @@
 import React, { useEffect, useRef } from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, TypographyProps } from '@mui/material'
 import { motion, useAnimation, useInView } from 'framer-motion'
 
-const TextCtn = ({ children, delay = 0 }: { children: string; delay?: number }) => {
+const TextCtn = ({
+    children,
+    delay = 0,
+    typographyProps,
+}: {
+    children: string
+    delay?: number
+    typographyProps?: TypographyProps
+}) => {
     const controls = useAnimation()
     const ref = useRef(null)
     const isInView = useInView(ref, { margin: '-25%' })
@@ -23,7 +31,9 @@ const TextCtn = ({ children, delay = 0 }: { children: string; delay?: number }) 
                         animate={controls}
                         transition={{ delay: 0.03 * index + delay }}
                     >
-                        <Typography variant="h1">{char === ' ' ? '\u00A0' : char}</Typography>
+                        <Typography variant="h1" {...typographyProps}>
+                            {char === ' ' ? '\u00A0' : char}
+                        </Typography>
                     </Box>
                 ))}
             </Box>

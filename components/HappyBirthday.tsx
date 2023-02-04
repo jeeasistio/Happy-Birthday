@@ -10,7 +10,6 @@ export const HappyBirthday = () => {
                 height: '100vh',
                 width: '100vw',
                 p: 4,
-                backgroundColor: '#D69797',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -20,12 +19,29 @@ export const HappyBirthday = () => {
                 component={motion.div}
                 sx={{
                     position: 'relative',
-                    backgroundColor: '#EDC0C0',
                     width: '100%',
                     height: '100%',
                     overflow: 'hidden',
                 }}
             >
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                    }}
+                    component="video"
+                    width={'100%'}
+                    height={'100%'}
+                    autoPlay
+                    loop
+                    muted
+                >
+                    <source src="/skyvids/skyvid_full.mp4" type="video/mp4" />
+                </Box>
                 <Box
                     component={motion.div}
                     initial={{ y: '0%' }}
@@ -36,7 +52,7 @@ export const HappyBirthday = () => {
                         left: 0,
                         width: '100%',
                         height: '50%',
-                        backgroundColor: '#D69797',
+                        backgroundColor: 'common.white',
                     }}
                 />
                 <Box
@@ -49,7 +65,7 @@ export const HappyBirthday = () => {
                         bottom: 0,
                         width: '100%',
                         height: '50%',
-                        backgroundColor: '#D69797',
+                        backgroundColor: 'common.white',
                     }}
                 />
                 <Box
@@ -62,7 +78,7 @@ export const HappyBirthday = () => {
                         left: 0,
                         width: '50%',
                         height: '100%',
-                        backgroundColor: '#D69797',
+                        backgroundColor: 'common.white',
                     }}
                 />
                 <Box
@@ -75,7 +91,7 @@ export const HappyBirthday = () => {
                         right: 0,
                         width: '50%',
                         height: '100%',
-                        backgroundColor: '#D69797',
+                        backgroundColor: 'common.white',
                     }}
                 />
             </Box>
@@ -94,7 +110,14 @@ export const HappyBirthday = () => {
             >
                 {'Happy Birthday Viki'.split(' ').map((char, index) => (
                     <Box key={index} component={motion.div} transition={{ delay: index }}>
-                        <TextCtn delay={0.2 * index}>{char}</TextCtn>
+                        <TextCtn
+                            delay={0.2 * index}
+                            typographyProps={{
+                                color: 'common.white',
+                            }}
+                        >
+                            {char}
+                        </TextCtn>
                     </Box>
                 ))}
             </Box>
