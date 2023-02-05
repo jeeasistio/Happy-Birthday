@@ -4,7 +4,7 @@ import TextCtn from './TextCtn'
 
 export const NotGood = () => {
     return (
-        <Box sx={{ backgroundColor: '#C9FCBD' }}>
+        <Box>
             <Stack>
                 {"I'm not good with words so I'll just throw photos here.".split(' ').map((word, index) => (
                     <TextCtn key={index}>{word}</TextCtn>
