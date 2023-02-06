@@ -13,7 +13,16 @@ const images = [
 
 export const ParallaxImages = () => {
     return (
-        <Box sx={{ height: '500px', display: 'flex', alignItems: 'center' }}>
+        <Box
+            sx={{
+                height: '500px',
+                display: 'flex',
+                alignItems: 'center',
+                background: 'url(/parallax_images_bg.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: '80% 70%',
+            }}
+        >
             <ParallaxCtn baseVelocity={-2}>
                 <Stack direction="row">
                     {images.map((image) => (

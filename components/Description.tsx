@@ -10,7 +10,7 @@ const rows = [
 
 export const Description = () => {
     return (
-        <Box sx={{ height: '100vh', overflow: 'hidden' }}>
+        <Box sx={{ height: '100vh', overflow: 'hidden', backgroundColor: '#C07CF5' }}>
             <Stack sx={{ height: '100%', justifyContent: 'space-evenly', transform: 'rotate(-15deg)' }}>
                 {rows.map((row, rowIndex) => (
                     <>
@@ -22,6 +22,7 @@ export const Description = () => {
                                 {row.words.map((word, index) => (
                                     <Typography
                                         sx={{ fontSize: { xs: '8rem', sm: '12rem' } }}
+                                        color="common.white"
                                         key={index}
                                         fontWeight="bold"
                                         fontFamily={rowIndex % 2 === 0 ? 'Lato' : 'Playfair Display'}

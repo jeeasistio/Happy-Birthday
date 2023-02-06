@@ -41,7 +41,6 @@ const transformsRotate = [
 ]
 
 export const Gallery = () => {
-    console.log(Math.random() * 5 + 1)
     return (
         <Box sx={{ p: 4 }}>
             <Stack sx={{ margin: 'auto', justifyContent: 'center', flexWrap: 'wrap', maxWidth: 1200 }} direction="row">

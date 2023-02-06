@@ -27,7 +27,7 @@ const TextCtn = ({
                     <Box
                         key={index}
                         component={motion.p}
-                        initial={{ y: '100%', opacity: 0.3 }}
+                        initial={{ y: '110%', opacity: 0.3 }}
                         animate={controls}
                         transition={{ delay: 0.03 * index + delay }}
                     >

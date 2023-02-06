@@ -15,7 +15,7 @@ export const MarqueeCtn = ({ children, direction }: Props) => {
                 .map((_, index) => (
                     <motion.div
                         key={index}
-                        style={{ display: 'flex' }}
+                        style={{ display: 'flex', backgroundColor: direction === 'left' ? '#F9DC78' : 'transparent' }}
                         animate={{ x: direction === 'left' ? ['0%', '-400%'] : ['-400%', '0%'] }}
                         transition={{ repeat: Infinity, duration: 40, ease: 'linear' }}
                     >
