@@ -43,7 +43,7 @@ export const HappyBirthday = () => {
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
-                        borderRadius: 8,
+                        borderRadius: 12,
                     }}
                     component="video"
                     width={'100%'}

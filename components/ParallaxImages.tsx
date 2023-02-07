@@ -23,7 +23,7 @@ export const ParallaxImages = () => {
                 backgroundPosition: '80% 70%',
             }}
         >
-            <ParallaxCtn baseVelocity={-2}>
+            <ParallaxCtn baseVelocity={2}>
                 <Stack direction="row">
                     {images.map((image) => (
                         <Box

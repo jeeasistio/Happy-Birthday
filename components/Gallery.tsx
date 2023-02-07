@@ -42,7 +42,28 @@ const transformsRotate = [
 
 export const Gallery = () => {
     return (
-        <Box sx={{ p: 4 }}>
+        <Box
+            sx={{
+                position: 'relative',
+                p: 8,
+                background: 'url(gallery.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+        >
+            <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+                <img src="/gallery2.jpg" width={'100%'} height={'100%'} />
+            </Box>
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: '#00000088',
+                }}
+            />
             <Stack sx={{ margin: 'auto', justifyContent: 'center', flexWrap: 'wrap', maxWidth: 1200 }} direction="row">
                 {images.map((image) => (
                     <Box
