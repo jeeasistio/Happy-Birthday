@@ -16,6 +16,7 @@ export const HappyBirthday = () => {
     return (
         <Box
             sx={{
+                position: 'relative',
                 height: '100vh',
                 width: '100vw',
                 p: '2%',
@@ -58,7 +59,7 @@ export const HappyBirthday = () => {
                     component={motion.div}
                     initial={{ y: '0%' }}
                     animate={{ y: '-100%' }}
-                    transition={getTransition({ delay: 1 })}
+                    transition={getTransition({ delay: 5 })}
                     sx={{
                         position: 'absolute',
                         top: 0,
@@ -72,7 +73,7 @@ export const HappyBirthday = () => {
                     component={motion.div}
                     initial={{ y: '0%' }}
                     animate={{ y: '100%' }}
-                    transition={getTransition({ delay: 1 })}
+                    transition={getTransition({ delay: 5 })}
                     sx={{
                         position: 'absolute',
                         left: 0,
@@ -86,6 +87,7 @@ export const HappyBirthday = () => {
                     component={motion.div}
                     initial={{ x: '0%' }}
                     animate={{ x: '-100%' }}
+                    transition={getTransition({ delay: 4 })}
                     sx={{
                         position: 'absolute',
                         top: 0,
@@ -99,6 +101,7 @@ export const HappyBirthday = () => {
                     component={motion.div}
                     initial={{ x: '0%' }}
                     animate={{ x: '100%' }}
+                    transition={getTransition({ delay: 4 })}
                     sx={{
                         position: 'absolute',
                         top: 0,
@@ -123,16 +126,16 @@ export const HappyBirthday = () => {
                 }}
             >
                 {'Happy Birthday Viki'.split(' ').map((char, index) => (
-                    <Box key={index} component={motion.div} transition={{ delay: index }}>
-                        <TextCtn
-                            delay={0.2 * index}
-                            typographyProps={{
-                                color: 'common.white',
-                            }}
-                        >
-                            {char}
-                        </TextCtn>
-                    </Box>
+                    <TextCtn
+                        key={index}
+                        delay={0.2 * index + 4}
+                        once={true}
+                        typographyProps={{
+                            color: 'common.white',
+                        }}
+                    >
+                        {char}
+                    </TextCtn>
                 ))}
             </Box>
         </Box>

@@ -5,15 +5,17 @@ import { motion, useAnimation, useInView } from 'framer-motion'
 const TextCtn = ({
     children,
     delay = 0,
+    once = false,
     typographyProps,
 }: {
     children: string
     delay?: number
+    once?: boolean
     typographyProps?: TypographyProps
 }) => {
     const controls = useAnimation()
     const ref = useRef(null)
-    const isInView = useInView(ref, { margin: '-25%' })
+    const isInView = useInView(ref, { margin: '-25%', once })
 
     useEffect(() => {
         if (isInView) controls.start({ y: '0%', opacity: 1 })

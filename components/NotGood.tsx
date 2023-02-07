@@ -28,6 +28,7 @@ export const NotGood = () => {
                     width: '100%',
                     height: '200%',
                     background: 'url(green.jpg)',
+                    backgroundPosition: '30% 50%',
                     backgroundSize: 'cover',
                 }}
             />
