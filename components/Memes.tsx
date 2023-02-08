@@ -1,8 +1,5 @@
 import React from 'react'
 import { Box, useMediaQuery, useTheme } from '@mui/material'
-import { motion } from 'framer-motion'
-
-const initialRotate = [-360, 360]
 
 const MemeImage = ({
     src,
@@ -12,8 +9,8 @@ const MemeImage = ({
     rotate,
 }: {
     src: string
-    width: number | string
-    height: number | string
+    width: number
+    height: number
     rotate: number
     position: {
         top?: number | string
@@ -26,14 +23,8 @@ const MemeImage = ({
     const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
     return (
-        <Box
-            component={motion.div}
-            initial={{ scale: 0, rotate: initialRotate[Math.floor(Math.random() * 3)] }}
-            whileInView={{ scale: isMobile ? 1 : 2, rotate: rotate }}
-            viewport={{ once: true }}
-            sx={{ position: 'absolute', ...position }}
-        >
-            <img src={src} width={width} height={height} />
+        <Box sx={{ position: 'absolute', ...position, transform: `rotate(${rotate}deg)` }}>
+            <img src={src} width={isMobile ? width : width * 2} height={isMobile ? height : height * 2} />
         </Box>
     )
 }
